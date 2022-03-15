@@ -73,7 +73,7 @@ workflows:
           requires:
             - build
       - deploy:
-          tequires:
+          requires:
             - test
           filters:
             branches:
