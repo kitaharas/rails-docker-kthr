@@ -5,17 +5,22 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.7.5
+      - image: cimg/ruby:2.7.5
     working_directory: ~/rails-docker-kthr/src
     steps:
       - checkout:
           path: ~/rails-docker-kthr
       - ruby/install-deps
+      # - restore_cache:
+      #     name: bundle installの結果をrestore
+      #     keys: 
+      #       - v1-dependencies-{{ checksum "Gemfile.lock" }}
+      #       - v1-dependencies-
 
 
   test:
     docker:
-      - image: circleci/ruby:2.7.5
+      - image: cimg/ruby:2.7.5
       - image: circleci/mysql:5.5
         environment:
           MYSQL_ROOT_PASSWORD: password
