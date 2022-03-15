@@ -9,7 +9,7 @@ jobs:
     working_directory: ~/rails-docker-kthr/src
     steps:
       - checkout:
-          path: ~/rails_docker-kthr
+          path: ~/rails-docker-kthr
       - ruby/install-deps
 
 
@@ -26,7 +26,7 @@ jobs:
       BUNDLE_RETRY: "3"
       APP_DATABASE_HOST: "127.0.0.1"
       RAILS_ENV: test
-    working_directory: ~/rails_docker-kthr/src
+    working_directory: ~/rails-docker-kthr/src
     steps:
       - checkout:
           path: ~/rails-docker-kthr
